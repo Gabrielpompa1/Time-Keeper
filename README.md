@@ -34,3 +34,14 @@
 - A user can edit current / previous tasks
 - Users can view current task
 - Spreadsheet is generated when Generate button is pressed OR Generate button displays information as JSON (To possibly be used when spreadsheet generator is hooked up)
+
+## Notes / Future Ideas
+- User can leave notes for each task
+- User can set daily goals / reminders
+- Throw in a pomodoro clock
+- Show the current date as well
+- Greet the user by name
+- Implement a sign in feature
+- The log feature shows detailed information about each task
+- Pause feature for tasks
+- Daily calendar feature
