@@ -24,7 +24,7 @@
 ![Create task Modal](./src/assets/Images/ProjectPlanning/Modal.png)
 ## Project Overview
 - Time Keeper is an application made with VueJS to allow self-employed individuals to keep track of daily schedules. 
-- Rather than manually inputting tasks with start & end times into a spreadsheet, users can quickly and intuitively enter in a task, whil Time Keeper handles the start time for each task. 
+- Rather than manually inputting tasks with start & end times into a spreadsheet, users can quickly and intuitively enter in a task, while Time Keeper handles the start time for each task. 
 - When a user is complete with the task they can end the timer for the task, and Time Keeper will log the completed task.
 - When a user is finished for the day, they can press the "Generate" button, to have Time Keeper create a Microsoft Excel Spreadsheet with the organized list of tasks for that date.
 
