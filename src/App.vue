@@ -5,9 +5,9 @@
 		</header>
 		<nav>
 			<ul>
-				<li>New Task</li>
-				<li>Edit</li>
-				<li>Log</li>
+				<li @click='greet'>New Task</li>
+				<li @click='greet'>Edit</li>
+				<li @click='greet'>Log</li>
 			</ul>
 		</nav>
 		<main>
@@ -23,15 +23,22 @@
 					<li>Set up app structure</li>
 				</ul>
 			</div>
-			<button>Generate</button>
+			<button @click='greet'>Generate</button>
 		</main>
 	</body>
 </template>
+
 
 <script>
 export default {
 	name: 'App',
 	components: {},
+	methods: {
+		// eslint-disable-next-line
+		greet(event){
+			alert('Button Clicked!')
+		}
+	}
 };
 </script>
 
