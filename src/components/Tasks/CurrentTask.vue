@@ -11,4 +11,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.current-task-item {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+</style>

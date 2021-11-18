@@ -21,4 +21,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.task-div {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+</style>
