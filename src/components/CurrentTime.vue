@@ -7,8 +7,17 @@
 
 <script>
 export default {
-    name: "CurrentTime"
+	name: 'CurrentTime',
 };
 </script>
 
-<style></style>
+<style>
+/* Current Time Div */
+.current-time-div {
+	text-align: center;
+}
+
+.time {
+	font-size: 1.5em;
+}
+</style>

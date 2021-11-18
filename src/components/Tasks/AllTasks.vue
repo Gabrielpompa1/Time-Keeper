@@ -23,4 +23,31 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.previous-task-div {
+	margin-top: 20px;
+	/* width: 50vw; */
+}
+
+/* 
+
+.task-table {
+	display: flex;
+	justify-content: center;
+}
+
+.table-headings {
+	text-align: center;
+	margin: auto;
+}
+
+ */
+th {
+	font-weight: bold;
+}
+
+td {
+	font-size: 1.3em;
+	padding: 10px;
+}
+</style>

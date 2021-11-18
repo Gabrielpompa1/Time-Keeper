@@ -6,8 +6,21 @@
 
 <script>
 export default {
-    name: "AddTask"
+	name: 'AddTask',
+	methods: {
+		submit(event) {
+			event.preventDefault();
+			console.log(event.target[0].value);
+		},
+	},
 };
 </script>
 
-<style></style>
+<style>
+input {
+	border: 1px solid black;
+	border-radius: 2px;
+	text-align: center;
+	margin: 10px;
+}
+</style>
