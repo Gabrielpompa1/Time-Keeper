@@ -5,8 +5,6 @@
 		<main>
 			<!-- Div to display the current time -->
 			<CurrentTime />
-			<!-- Add task form -->
-			<AddTask />
 			<!-- Div to Display current Task -->
 			<TaskDiv />
 			<button @click="click">Generate</button>
@@ -19,21 +17,30 @@
 import Header from './components/Header.vue';
 import Navbar from './components/Navbar.vue';
 import CurrentTime from './components/CurrentTime.vue';
-import AddTask from './components/Tasks/AddTask.vue';
 import TaskDiv from './components/Tasks/TaskDiv.vue';
 
 export default {
 	name: 'App',
+	data() {
+		return {
+			taskList: [],
+			taskText: '',
+		};
+	},
 	components: {
 		Header,
 		Navbar,
 		CurrentTime,
-		AddTask,
 		TaskDiv,
 	},
 	methods: {
 		click() {
 			alert('Button Clicked!');
+		},
+		addTask(task) {
+			this.taskList.push(task);
+			this.taskText = task.text;
+			console.log(this.taskList);
 		},
 	},
 };

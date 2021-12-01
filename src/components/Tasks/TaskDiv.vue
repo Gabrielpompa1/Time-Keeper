@@ -1,15 +1,17 @@
 <template>
 	<div class="task-div">
+		<AddTask @new-task='newTask'/>
 		<!-- Current Task Displayed -->
-		<CurrentTask />
+		<CurrentTask :currTask="currentTask"/>
 		<!-- All previous completed tasks -->
-		<AllTasks />
+		<AllTasks :list="taskList"/>
 	</div>
 </template>
 
 <script>
 // Imports
 import CurrentTask from './CurrentTask.vue';
+import AddTask from './AddTask';
 import AllTasks from './AllTasks.vue';
 
 export default {
@@ -17,7 +19,22 @@ export default {
 	components: {
 		CurrentTask,
 		AllTasks,
+		AddTask,
 	},
+	data(){
+		return {
+			taskList: [],
+			currentTask: ''
+		}
+	},
+	methods: {
+		newTask(task){
+			this.taskList.push(task)
+			this.currentTask = task.text
+			console.log(this.taskList)
+		}
+	},
+
 };
 </script>
 

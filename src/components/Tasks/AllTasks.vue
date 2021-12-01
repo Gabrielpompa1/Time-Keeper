@@ -7,12 +7,15 @@
 				<th>Start</th>
 				<th>End</th>
 			</tr>
-			<tr class="table-row-one">
-				<td>Study VueJS</td>
-				<td>8:00am</td>
-				<td>11:00am</td>
+			<tr  :key='i' v-for='(task, i) in list' class="table-row-one">
+				<td>{{task.text}}</td>
+
+				<td>{{task.taskStart}}</td>
+
+				<td>{{task.taskEnd}}</td>
+
 			</tr>
-			<tr class="table-row-two"></tr>
+
 		</table>
 	</div>
 </template>
@@ -20,6 +23,14 @@
 <script>
 export default {
 	name: 'AllTasks',
+	data(){
+		return {
+			array: ['item One', 'item two', 'item three']
+		}
+	},
+	props: {
+		list: Object
+	}
 };
 </script>
 
