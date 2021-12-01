@@ -1,13 +1,14 @@
 <template>
 	<div class="current-task-div">
 		<h2>Current Task</h2>
-		<p class="current-task-item">Set up app structure</p>
+		<p class="current-task-item">{{ currTask }}</p>
 	</div>
 </template>
 
 <script>
 export default {
 	name: 'CurrentTask',
+	props: { currTask: String },
 };
 </script>
 
