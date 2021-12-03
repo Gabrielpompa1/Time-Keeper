@@ -7,7 +7,7 @@
 			<CurrentTime />
 			<!-- Div to Display current Task -->
 			<TaskDiv />
-			<button @click="click">Generate</button>
+			<button class="gen-btn" @click="click">Generate</button>
 		</main>
 	</body>
 </template>
@@ -59,7 +59,7 @@ main {
 }
 
 /* Generate Spreadsheet Button */
-button {
+.gen-btn {
 	position: relative;
 	top: 100px;
 	background-color: rgb(163, 34, 249);
