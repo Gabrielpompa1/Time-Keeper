@@ -1,32 +1,26 @@
 <template>
-	<form action="" @submit.prevent="onSubmit">
-		<input type="text" v-model="task" placeholder="Create new task" />
+	<form action="" @submit.prevent="$store.dispatch('addNewTask')">
+		<input v-model="newTaskText" type="text" placeholder="Create new task" />
 	</form>
 </template>
 
 <script>
 export default {
 	name: 'AddTask',
-	data() {
-		return {
-			task: '',
-		};
-	},
 	methods: {
-		onSubmit() {
-			if (!this.task) {
-				return alert('Please enter a task...');
-			}
+		onSubmit(){
+			console.log('Submitted')
+		}
+	},
+	computed: {
+		newTaskText: {
+			get() {
+				return this.$store.state.currentTask;
+			},
+			set(task) {
+				this.$store.dispatch('taskInput', task);
 
-			const newTask = {
-				text: this.task,
-				taskStart: new Date().toLocaleTimeString(),
-				taskEnd: '2:00:00 PM'
-			};
-			console.log(newTask);
-			this.$emit('new-task', newTask);
-
-			this.task = '';
+			},
 		},
 	},
 };

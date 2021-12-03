@@ -21,12 +21,6 @@ import TaskDiv from './components/Tasks/TaskDiv.vue';
 
 export default {
 	name: 'App',
-	data() {
-		return {
-			taskList: [],
-			taskText: '',
-		};
-	},
 	components: {
 		Header,
 		Navbar,
@@ -36,11 +30,6 @@ export default {
 	methods: {
 		click() {
 			alert('Button Clicked!');
-		},
-		addTask(task) {
-			this.taskList.push(task);
-			this.taskText = task.text;
-			console.log(this.taskList);
 		},
 	},
 };

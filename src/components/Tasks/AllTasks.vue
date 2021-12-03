@@ -7,15 +7,14 @@
 				<th>Start</th>
 				<th>End</th>
 			</tr>
-			<tr  :key='i' v-for='(task, i) in list' class="table-row-one">
-				<td>{{task.text}}</td>
+			<tr  :key='i' v-for='(task, i) in $store.state.taskList' class="table-row-one">
+				<td>{{task.task}}</td>
 
 				<td>{{task.taskStart}}</td>
 
 				<td>{{task.taskEnd}}</td>
 
 			</tr>
-
 		</table>
 	</div>
 </template>
@@ -23,14 +22,6 @@
 <script>
 export default {
 	name: 'AllTasks',
-	data(){
-		return {
-			array: ['item One', 'item two', 'item three']
-		}
-	},
-	props: {
-		list: Object
-	}
 };
 </script>
 
