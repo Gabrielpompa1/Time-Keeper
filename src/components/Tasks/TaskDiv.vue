@@ -1,10 +1,10 @@
 <template>
 	<div class="task-div">
-		<AddTask @new-task='newTask'/>
+		<AddTask/>
 		<!-- Current Task Displayed -->
-		<CurrentTask :currTask="currentTask"/>
+		<CurrentTask/>
 		<!-- All previous completed tasks -->
-		<AllTasks :list="taskList"/>
+		<AllTasks/>
 	</div>
 </template>
 
@@ -20,19 +20,6 @@ export default {
 		CurrentTask,
 		AllTasks,
 		AddTask,
-	},
-	data(){
-		return {
-			taskList: [],
-			currentTask: ''
-		}
-	},
-	methods: {
-		newTask(task){
-			this.taskList.push(task)
-			this.currentTask = task.text
-			console.log(this.taskList)
-		}
 	},
 
 };

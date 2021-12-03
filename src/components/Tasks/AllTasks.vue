@@ -1,21 +1,27 @@
 <template>
-	<div class="previous-task-div">
-		<h2>Previous Tasks</h2>
-		<table class="task-table">
-			<tr class="table-headings">
-				<th>Task</th>
-				<th>Start</th>
-				<th>End</th>
-			</tr>
-			<tr  :key='i' v-for='(task, i) in list' class="table-row-one">
-				<td>{{task.text}}</td>
+	<div>
+		<h2>Completed Tasks</h2>
+		<table class="table-auto border">
+			<thead>
+				<tr>
+					<th>Task</th>
+					<th>Start</th>
+					<th>End</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					class="bg-green-200"
+					:key="i"
+					v-for="(task, i) in $store.state.taskList"
+				>
+					<td class="bg-red-200">{{ task.task }}</td>
 
-				<td>{{task.taskStart}}</td>
+					<td class="bg-blue-200">{{ task.taskStart }}</td>
 
-				<td>{{task.taskEnd}}</td>
-
-			</tr>
-
+					<td class="bg-yellow-200">{{ task.taskEnd }}</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </template>
@@ -23,14 +29,6 @@
 <script>
 export default {
 	name: 'AllTasks',
-	data(){
-		return {
-			array: ['item One', 'item two', 'item three']
-		}
-	},
-	props: {
-		list: Object
-	}
 };
 </script>
 

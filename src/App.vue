@@ -7,7 +7,7 @@
 			<CurrentTime />
 			<!-- Div to Display current Task -->
 			<TaskDiv />
-			<button @click="click">Generate</button>
+			<!-- <button class="gen-btn" @click="click">Generate</button> -->
 		</main>
 	</body>
 </template>
@@ -19,14 +19,10 @@ import Navbar from './components/Navbar.vue';
 import CurrentTime from './components/CurrentTime.vue';
 import TaskDiv from './components/Tasks/TaskDiv.vue';
 
+import './assets/tailwind.css'
+
 export default {
 	name: 'App',
-	data() {
-		return {
-			taskList: [],
-			taskText: '',
-		};
-	},
 	components: {
 		Header,
 		Navbar,
@@ -36,11 +32,6 @@ export default {
 	methods: {
 		click() {
 			alert('Button Clicked!');
-		},
-		addTask(task) {
-			this.taskList.push(task);
-			this.taskText = task.text;
-			console.log(this.taskList);
 		},
 	},
 };
@@ -70,7 +61,7 @@ main {
 }
 
 /* Generate Spreadsheet Button */
-button {
+.gen-btn {
 	position: relative;
 	top: 100px;
 	background-color: rgb(163, 34, 249);
