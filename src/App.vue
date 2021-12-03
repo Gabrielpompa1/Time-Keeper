@@ -7,7 +7,7 @@
 			<CurrentTime />
 			<!-- Div to Display current Task -->
 			<TaskDiv />
-			<button class="gen-btn" @click="click">Generate</button>
+			<!-- <button class="gen-btn" @click="click">Generate</button> -->
 		</main>
 	</body>
 </template>
@@ -18,6 +18,8 @@ import Header from './components/Header.vue';
 import Navbar from './components/Navbar.vue';
 import CurrentTime from './components/CurrentTime.vue';
 import TaskDiv from './components/Tasks/TaskDiv.vue';
+
+import './assets/tailwind.css'
 
 export default {
 	name: 'App',

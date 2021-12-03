@@ -1,7 +1,7 @@
 <template>
 	<nav>
 		<ul>
-			<li @click="click">New Task</li>
+			<li @click="$store.dispatch('toggleTaskInput')">New Task</li>
 			<li @click="click">Edit</li>
 			<li @click="click">Log</li>
 		</ul>

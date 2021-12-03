@@ -6,32 +6,34 @@ const store = createStore({
 		// task, startTime, endTime
 		// New features: Members working on project "default = me"
 		taskList: [
-			{
-				task: 'Implement Vuex',
-				taskStart: '4:26:00 PM',
-				taskEnd: '',
-			},
+		
 		],
-		// Current Task will just be the last task added to the array.
+		newTaskBool: false,
+		newTaskInput: '',
 		currentTask: '',
 	},
 
 	mutations: {
 		taskInput(state, task) {
-			state.currentTask = task;
+			state.newTaskInput = task;
+			console.log(task)
 		},
 		addNewTask(state) {
-			state.taskList.push({
-				task: state.currentTask,
+			state.currentTask = {
+				task: state.newTaskInput,
 				taskStart: new Date().toLocaleTimeString(),
 				taskEnd: '',
-			});
-			state.currentTask = '';
+			};
+			state.newTaskBool = false
 		},
 		endTask(state) {
-			state.taskList[state.taskList.length - 1].taskEnd =
+			state.currentTask.taskEnd =
 				new Date().toLocaleTimeString();
+			state.taskList.push(state.currentTask)
 			state.currentTask = '';
+		},
+		toggleTaskInput(state) {
+			state.newTaskBool = !state.newTaskBool;
 		},
 	},
 	actions: {
@@ -40,6 +42,12 @@ const store = createStore({
 		},
 		addNewTask({ commit }) {
 			commit('addNewTask');
+		},
+		endTask({commit}) {
+			commit('endTask');
+		},
+		toggleTaskInput({ commit }) {
+			commit('toggleTaskInput');
 		},
 	},
 });

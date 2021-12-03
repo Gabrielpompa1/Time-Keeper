@@ -2,11 +2,13 @@
 	<h2>Current Task</h2>
 	<div class="current-task-div">
 		<p class="current-task-item">
-			{{ $store.state.taskList[$store.state.taskList.length - 1].task }}
+			{{ $store.state.currentTask.task }}
 		</p>
-		<button @click="$store.dispatch('endTask')">
-			Complete <br />
-			Task
+		<p class="current-task-item">
+			{{ $store.state.currentTask.taskStart }}
+		</p>
+		<button v-show="$store.state.currentTask.task" @click="$store.dispatch('endTask')">
+			Complete
 		</button>
 	</div>
 </template>
@@ -20,7 +22,6 @@ export default {
 <style>
 .current-task-div {
 	width: 80%;
-
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -42,5 +43,4 @@ button {
 button:hover {
 	background-color: green;
 }
-
 </style>
